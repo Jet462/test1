@@ -1,0 +1,335 @@
+main {
+    background-color: azurewhite;
+/*    height: 100%;*/
+}
+body {
+    overflow-x: hidden;
+}
+#product-overview {
+/*    background: linear-gradient(to top,rgba(80,68,18,0.9), transparent), url("images/freedom-1920x1279.jpg") left 0% bottom 100%/cover no-repeat border-box, blue;*/
+    background: linear-gradient(to top,rgba(80,68,18,.6) 10%,transparent), url("images/freedom-1920x1279.jpg") center/cover no-repeat border-box content-box, white;
+    
+/*
+    background-image: url("images/freedom-1920x1279.jpg");
+    background-size: cover;
+    background-position: 20px 20px;
+    background-repeat: no-repeat;
+*/
+    
+    
+/*    background-size: cover;*/
+/*////// Cover the whole container, if viewport bigger the img will zoom in. Disrespect aspect ratio. it will choose one side (HR or VRT) display in full and try to give the most image displayed and the least excess area. ///////*/
+    
+/*<!-----------------------------!>*/
+/*    background-position: left 10% bottom 20%;*/
+    
+/*10% current horizontal excess to the left; 
+20% current vertical excess area to the bottom, rest of excess to opposite; */
+    
+/*    background-image: linear-gradient(180deg,red 70%,blue 90%, yellow);*/
+/*    background-image: radial-gradient(ellipse farthest-corner at 20% 50%, red, blue 90%, green);*/
+
+/*
+    background-repeat: no-repeat;
+    background-origin: border-box; 
+*/
+    
+/*  expand img size to border size,
+    keep excess */
+    
+/*    background-clip: content-box;*/
+/*    background-clip: padding-box;*/
+/*    cut excess img from the border   */
+    
+/*    background-attachment: fixed;*/
+    
+    width: 100vw;
+    height: 33vh;
+/*    height: 528px;*/
+    position: relative;
+    
+/*Add "relative" in Any parent will change the "Absolute" positioning on its child from "viewport" to parent (where "relative" added) */
+}
+
+#product-overview h1 {
+    color: white;
+    font-family: 'Anton', sans-serif;    
+    position: absolute;
+    bottom: 0%;
+/*- bottom: 100%; this align h1 bottom margin to #product-Overview's content.*/
+    left: 3%;
+    font-size: 1.6rem;
+
+/*ONLY use "reletive" 
+1-In doc flow. 2-Positioning target its own current position*/
+    
+/*    position: absolute;*/
+/*    bottom: 0%;*/
+/*    right: 0%;*/
+    
+/*"Absolute" 
+1-out doc flow. 2-Absolute position target HTML(if no position appied in parent) && if position applied to any parent it will target to the parent; Respect own margin. 3-Resize to actuall content size*/
+    
+/*fixed*/
+/*1-Out doc flow. 2-Positioning target viewport and Fixed to viewport*/
+}
+
+/*# ====IMG=mediaQuery=START========*/
+
+
+@media (min-width: 35rem) and (min-height: 19rem){
+    #product-overview {
+        height: 30vh;
+        background-position: 50% 18%;
+    }
+    #product-overview h1 {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 40rem) and (min-height: 40rem){
+    #product-overview {
+        height: 40vh;
+        background-position: 50% 25%;
+    }
+    #product-overview h1 {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 85rem) and (min-height: 23rem){
+    #product-overview {
+        height: 40vh;
+        background-position: 50% 18%;
+    }
+    #product-overview h1 {
+        font-size: 3rem;
+    }
+}
+/*# ====IMG=mediaQuery=END========= */
+
+
+/* -------plan-START--------------- */
+.section-title {
+    color: seagreen;
+    text-align: center;
+/*    vertical-align: center;*/
+}
+
+/*
+.plan__list {
+    width: 100%;
+    text-align: center;
+}
+*/
+
+.plan {
+    background-color: #d5ffdc;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+/*    display: inline-block;*/
+    width: 100%;
+/*    vertical-align: middle;*/
+}
+
+.plan--highlighted {
+    background-color: forestgreen;
+    color: white;
+}
+
+.plan__annotation {
+    background-color: white;
+    color: forestgreen;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.plan__title {
+    color: #0E4F1F;
+}
+.plan__price {
+    color: grey;
+}
+.plan--highlighted .plan__title {
+    color: white;
+}
+.plan--highlighted .plan__price {
+    color: #0E4F1F;
+}
+.plan__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.plan__feature{
+    margin: 0.5rem 0;
+}
+
+/* ====plan=mediaQuery=start==== */
+@media (min-width: 40rem) and (orientation: landscape) {
+  .plan__list {
+      width: 100%;
+/*      text-align: center;*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  .plan {
+      width: 30%;
+      height: 28rem;
+      min-width: 13rem;
+      max-width: 25rem;
+      display: flex;
+      flex-direction: column;
+/*      align-items: center;*/
+      justify-content: space-between;
+    }
+    
+  .plan--highlighted {
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+      height: 30rem;
+      z-index: 1;
+    }
+}
+/* ====plan=mediaQuery=END====== */
+/* --------plan-END------------- */
+
+
+/* ----key-feature-START---------*/
+#key-features {
+    background-color: #ff1b68;
+    margin-top: 5rem;
+    padding: 1rem;
+}
+#key-features .section-title {
+    color: white;
+    margin: 2rem;
+    text-align: center;
+}
+.key-feature__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.key-feature {
+    
+ }
+.key-feature__image {
+    background: #ffcede;
+    width: 128px;
+    height: 128px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: auto;
+    padding: 1.5rem;
+    
+}
+.key-feature_description {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 40rem) {
+    .key-feature__list {
+        display: flex;
+        justify-content: center;
+    }
+    .key-feature {
+        width: 30%;
+/*        min-width: 11.5rem;*/
+        max-width: 25rem;
+/*        vertical-align: top;*/
+    }
+}
+/* -------key-feature-END-------------*/
+
+/* h1 {
+    font-family: sans-serif;
+} */
+
+/* =======Modal=======Modal========== */
+.modal {
+  background-color: floralwhite;
+  position: fixed;
+  display: none;
+  z-index: 200;
+    top:50%;
+/*    left:50%; */
+/*    margin-left:-50px;*/
+/*    margin-top:-50px;*/
+/*
+    top: 20%;
+    left: 30%;
+*/
+    margin: auto auto;
+/*margin: 1 auto 0 auto;*/
+    width: 19rem;
+    
+  top: calc(50% - 5.2rem); 
+  left: calc(50% - 9.5rem); 
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.modal__title {
+  text-align: center;
+  margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+
+.modal__actions {
+  text-align: center;
+}
+
+.modal__action {
+  border: 1px solid #0e4f1f;
+  background: #0e4f1f;
+  text-decoration: none;
+  color: white;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.modal__action:hover,
+.modal__action:active {
+  background: #2ddf5c;
+  border-color: #2ddf5c;
+}
+
+.modal__action--negative {
+  background: red;
+  border-color: red;
+}
+
+.modal__action--negative:hover,
+.modal__action--negative:active {
+  background: #ff5454;
+  border-color: #ff5454;
+}
+
+@media (min-width: 38rem) {
+    .modal {
+/*
+  top: calc(50% - 5.2rem); 
+  left: calc(50% - 10.25rem); 
+*/
+/*        whi*/
+/*        hei*/
+        
+    }
+}
+    
+ 
+
+/* =====BgIMG=MediaQuery=START===== */
+/* media query IS a if statment(In css pixels if min-width >= 40rem =640px) height: 50rem= 960px */
+
+/* ========MediaQuery=END========== */
+
