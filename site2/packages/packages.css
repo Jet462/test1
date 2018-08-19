@@ -1,0 +1,145 @@
+/* SVG Scalable Vector Graphics */
+
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-Regular.ttf") format("truetype");
+/*
+    src: url("anonymousPro-Regular.woff2") format("woff2");
+    src: url("anonymousPro-Regular.woff") format("woff");
+*/
+}
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-bold.ttf") format("truetype");
+    font-weight: 700;
+}
+main {
+    padding-top: 2rem;
+/*    height: 100vh;*/
+}
+.background {
+    background: url("../images/plans-background.jpg") center/cover;
+    filter: grayscale(40%);
+    width: 100%;
+/*    width: 100vw;*/
+    height: 100%;
+/*    height: 100vh;*/
+    position: fixed;
+    z-index: -1;
+/*(z-index:-1 for stay below package if "relative" position in "package" not used); and for footer to show up.*/
+
+}
+.package {
+    width: 80%;
+    margin: 1rem 0;
+    border: 4px solid #0e4f1f;
+    border-left: none;
+/*    position:  absolute;*/
+/*    z-index: ;*/
+    position: relative;
+    
+/*"relative" will bring the package to the front from "BCG position fixed". (Even not using z-index: -1 in BCG.) */
+}
+.package:hover,
+.package:active {
+    box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+/*    border-color: #ff5454 !important;*/
+    border-color: red;
+}
+.package a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 2rem;    
+}
+.package_badge {
+
+/*"Absolute" 
+1-out doc flow. 2-Absolute position target HTML(if no position appied in parent) && if position applied to any parent it will target to the parent; Respect own margin. 3-Resize to actuall content size*/
+    
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 1.25rem;
+    
+    font-size: 0.8rem;
+    color: white;
+    background: #ff5454;
+    padding: 0.5rem;
+/*    z-index: 1;*/
+}
+.package_subtitle {
+    color: darkgray
+}
+.package_info {
+    padding: 1rem;
+    border: 1px solid black;
+    font-size: 1.25rem;
+    color: black;
+    background: white;
+    font-family: "AnonymousPro", sans-serif;
+    font-weight: 700;
+    line-height: 1; /*Relate to font size.*/
+/*    text-shadow: 2px 2px 20px grey;*/
+    
+    }
+.clearfix {
+    clear:both;
+}
+#plus {
+    background: rgba(213, 255, 220, .9);
+}
+#free {
+    background: rgba(234, 252, 237, .9);
+    float: right;
+    border-right: none;
+    border-left: 4px solid #0e4f1f;
+    text-align: right;
+}
+
+#free:hover,
+#free:active {
+    border-left-color: red;
+}
+
+#premium {
+    background: rgba(14, 79, 31, .9);
+}
+#premium .package_title {
+    color: white;
+}
+#premium .package_subtitle {
+    color: #bbb;
+}
+
+@media (min-width: 40rem) {
+    main {
+/*        margin: 3rem auto;*/
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 1500px) {
+    .package {
+        border-left: 4px solid #0e4f1f;
+    }
+    #free {
+        border-right: 4px solid #0e4f1f;
+    }
+    #free:hover,
+    #free:active {
+        border-right-color: red;
+    }
+
+}
+
+
+/*
+.package:hover,
+.package:active {
+    box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+    border-color: #ff5454 !important;
+    border-color: yellow;
+}
+*/
